@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 
 /**
  * API Consumer creator.
@@ -9,11 +9,24 @@ import React from 'react'
  * @param {ReactElement} options.Consumer The React Context Consumer to use.
  * @return {Fuction} HOC function definition. Accepts React Component to wrap.
  */
-const APIConsumerCreator = ({ Consumer }) => WrappedComponent => props =>
-  <Consumer>
-    {
-      api => <WrappedComponent api={ api } { ...props } />
+const APIConsumerCreator = ({ Consumer }) => {
+  const APIConsumerHOC = WrappedComponent => {
+    class APIConsumer extends PureComponent {
+      render() {
+        return (
+          <Consumer>
+            {
+              api => <WrappedComponent api={ api } { ...this.props } />
+            }
+          </Consumer>
+        )
+      }
     }
-  </Consumer>
+
+    return APIConsumer
+  }
+
+  return APIConsumerHOC
+}
 
 export default APIConsumerCreator
