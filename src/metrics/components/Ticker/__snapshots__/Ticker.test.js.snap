@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders negative correctly 1`] = `
+<div
+  className="ticker"
+>
+  <span
+    className="change-colored-text-down"
+  >
+    <span
+      className="arrow arrow-down"
+    />
+  </span>
+  <span>
+    -1
+     
+  </span>
+  <span
+    className="change-colored-text-down"
+  >
+    -1.00
+     (
+    -1.00
+    %)
+  </span>
+</div>
+`;
+
+exports[`renders no change correctly 1`] = `
+<div
+  className="ticker"
+>
+  <span
+    className="change-colored-text"
+  >
+    <span
+      className="arrow"
+    />
+  </span>
+  <span>
+    0
+     
+  </span>
+  <span
+    className="change-colored-text"
+  >
+    0.00
+     (
+    0.00
+    %)
+  </span>
+</div>
+`;
+
+exports[`renders positive correctly 1`] = `
+<div
+  className="ticker"
+>
+  <span
+    className="change-colored-text-up"
+  >
+    <span
+      className="arrow arrow-up"
+    />
+  </span>
+  <span>
+    1
+     
+  </span>
+  <span
+    className="change-colored-text-up"
+  >
+    1.00
+     (
+    1.00
+    %)
+  </span>
+</div>
+`;

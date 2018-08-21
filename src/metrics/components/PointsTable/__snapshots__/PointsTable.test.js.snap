@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders cells correctly 1`] = `
+<table>
+  <thead>
+    <tr>
+      <th>
+        column1
+      </th>
+      <th>
+        column2
+      </th>
+      <th>
+        column3
+      </th>
+      <th>
+        column4
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        0
+      </td>
+      <td>
+        0
+      </td>
+      <td>
+        1
+      </td>
+      <td>
+        1
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

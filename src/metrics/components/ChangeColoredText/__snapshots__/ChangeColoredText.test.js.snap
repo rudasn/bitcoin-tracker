@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders negative changes correctly 1`] = `
+<span
+  className="change-colored-text-down"
+>
+  Down
+</span>
+`;
+
+exports[`renders no changes correctly 1`] = `
+<span
+  className="change-colored-text"
+>
+  None
+</span>
+`;
+
+exports[`renders positive changes correctly 1`] = `
+<span
+  className="change-colored-text-up"
+>
+  Up
+</span>
+`;
