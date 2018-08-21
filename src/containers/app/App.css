@@ -1,0 +1,51 @@
+/* Global CSS */
+:root {
+  --color-danger: red;
+  --color-success: green;
+  --color-dark: #000;
+  --color-muted: #888;
+  --color-light: #cecece;
+  --width-max: 880px;
+  --gutter: 3rem;
+  --gutter-minus: -3rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: #222;
+  background-color: #eee;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+td, th {
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--color-light);
+}
+
+tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.55rem;
+  font-weight: 300;
+}

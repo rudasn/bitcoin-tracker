@@ -1,0 +1,9 @@
+.change-colored-text {
+  color: var(--color-muted);
+}
+.change-colored-text-up {
+  color: var(--color-success);
+}
+.change-colored-text-down {
+  color: var(--color-danger);
+}

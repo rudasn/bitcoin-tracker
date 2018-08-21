@@ -1,0 +1,13 @@
+.panel {
+  margin: var(--gutter) auto;
+  max-width: 70%;
+  width: var(--width-max);
+}
+.panel-title {
+  margin: 0;
+}
+.panel-subtitle {
+  margin: 0 0 var(--gutter);
+}
+.panel-chart {
+}
