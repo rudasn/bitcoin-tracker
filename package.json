@@ -5,6 +5,7 @@
   "description": "Outlyer frontend recruitment test",
   "author": "rudasn@gmail.com",
   "dependencies": {
+    "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",
@@ -15,7 +16,8 @@
     "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "react-test-renderer": "^16.4.2"
   },
   "scripts": {
     "start": "react-scripts start",
