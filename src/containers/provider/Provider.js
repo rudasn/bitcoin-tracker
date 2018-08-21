@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Provider as ReduxProvider } from 'react-redux'
-import APIProvider from 'api/Provider'
+import { APIProvider } from 'api'
 
 /**
  * Global provider component.

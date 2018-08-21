@@ -1,6 +1,6 @@
 import 'whatwg-fetch'
 
-export default ({ host, port }) => {
+export default ({ host, }) => {
   return {
     version: '0.0.1',
     get(path) {
