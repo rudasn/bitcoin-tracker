@@ -10,6 +10,7 @@
     ```
     cp ./.env.example ./.env
     ```
+1. Clone, install, and start the [`frontend-server`](https://github.com/rudasn/outlyer-frontend-server)
 
 ## Usage
 
