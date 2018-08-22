@@ -57,9 +57,9 @@ small {
 }
 
 .app-title {
-  margin: var(--gutter-small) var(--gutter);
-  font-weight: 200;
   font-size: 3rem;
+  font-weight: 200;
+  margin: var(--gutter-small) var(--gutter);
   text-align: center;
 }
 
