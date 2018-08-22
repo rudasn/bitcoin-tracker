@@ -14,7 +14,7 @@ import reducerCreator, { createDefaultState } from './reducer'
 
 const reducer = reducerCreator()
 
-describe('handles Bitfinex requests', () => {
+it('handles Bitfinex requests', () => {
   const newState = reducer(undefined, {
     type: BITFINEX_REQUEST,
     payload: {
@@ -132,4 +132,32 @@ describe('handles Bitfinex responses', () => {
   })
 })
 
-// todo: handle errors
+it('handles Bitfinex errors', () => {
+  const error = 'Something went wrong'
+  const newState = reducer(undefined, {
+    type: BITFINEX_ERROR,
+    payload: {
+      ticker: 'btcgbp',
+      error,
+    }
+  })
+  const expectedState = {
+    btcgbp: {
+      ...createDefaultState(),
+      loading: false,
+      error,
+    }
+  }
+  expect(newState).toEqual(expectedState)
+})
+
+it('returns state otherwise', () => {
+  const newState = reducer(undefined, {
+    type: 'SOME/OTHER/ACTION',
+    payload: {
+      ticker: 'btcgbp',
+    }
+  })
+  const expectedState = {}
+  expect(newState).toEqual(expectedState)
+})

@@ -29,9 +29,9 @@ export const fetchBitfinex = ({ api, ticker }) => (dispatch, getState) => {
   // todo: also check for interval between requests for the same ticker
   dispatch(requestBitfinex({ ticker }))
 
-  return api.get(`https://api.bitfinex.com/v1/pubticker/${ ticker }`)
+  return api.get(`/https://api.bitfinex.com/v1/pubticker/${ ticker }`)
     .then(response => {
-        if (response.error) {
+        if (response && response.error) {
           throw response.error
         }
         dispatch(responseBitfinex({ ticker, response }))
