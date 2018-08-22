@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { compose } from 'recompact'
+import propTypes from 'prop-types'
 
 import Panel from 'metrics/components/Panel'
 import { withAPI } from 'api'
@@ -29,13 +30,14 @@ export class BitfinexContainer extends PureComponent {
     }
   }
   initialize() {
+    const { updateEvery } = this.props
     if (this.initialized) {
       this.teardown()
     }
     this.fetch()
     this.fetchInterval = setInterval(() => {
       this.fetch()
-    }, 6000)
+    }, updateEvery)
     this.initialized = true
   }
   teardown() {
@@ -46,11 +48,11 @@ export class BitfinexContainer extends PureComponent {
     dispatch(actions.fetchBitfinex({ ticker, api, }))
   }
   render() {
-    const { title, points=[], property, ticker } = this.props
-    const { chartOptions, tableOptions } = getTickerOptions(this.props)
-
+    const { title, points, property, ticker } = this.props
+    const { chartOptions, tableOptions } = getTickerOptions(this.props) // todo: memo
     const last = points[ points.length - 1 ]
 
+    // todo handle initial, loading, error, and success states
     if (!last) { return null }
 
     const value = last.point[property]
@@ -69,6 +71,29 @@ export class BitfinexContainer extends PureComponent {
         />
     )
   }
+}
+
+BitfinexContainer.propTypes = {
+  currency: propTypes.string,
+  property: propTypes.string.isRequired,
+  ticker: propTypes.string.isRequired,
+  title: propTypes.string,
+  updateEvery: propTypes.number,
+
+  // from API HOC
+  api: propTypes.object.isRequired,
+
+  // from Redux state
+  error: propTypes.object,
+  lastChecked: propTypes.instanceOf(Date),
+  lastResponse: propTypes.instanceOf(Date),
+  loading: propTypes.bool,
+  points: propTypes.arrayOf(propTypes.object),
+}
+
+BitfinexContainer.defaultProps = {
+  points: [],
+  updateEvery: 6000,
 }
 
 const mapStateToProps = (state, props) => {

@@ -45,9 +45,9 @@ export default ({ points=[], currency, property, tableLimit=15 }) => ({
       ]
     ].concat(
       points.filter(
-        ({ changes }) => !!changes[property]
+        ({ changes={} }) => !!changes[property]
       ).slice(-tableLimit).reverse().map(
-        ({ point, date, changes }) => ([
+        ({ point, date, changes={} }) => ([
           formatTableChange(changes[property][1]),
           formatTableDate(date),
           point.last_price,
