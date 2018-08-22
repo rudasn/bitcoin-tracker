@@ -1,5 +1,26 @@
 # Outlyer frontend recruitment test
 
+![Test Coverage](./coverage.svg)
+
+## Setup
+
+1. Install `node` & `yarn`
+2. Run `yarn install` to install dependencies
+
+## Usage
+
+Run `yarn start` to start the development server
+
+## Testing
+
+Run `yarn test` for unit testing in watch mode or `yarn test:coverage` to create a test coverage report (created under `./coverage`).
+
+## Production build
+
+To create a production build (runs tests first) run `yarn build:production`.
+
+---
+
 Thanks for taking the time to do our frontend coding test. The challenge has two parts:
 
 1) a [task](#task) to create a basic chart and trend arrow by consuming data from an API endpoint.
