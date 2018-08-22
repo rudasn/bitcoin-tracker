@@ -7,6 +7,9 @@ exports[`renders correctly 1`] = `
   <header
     className="panel-header"
   >
+    <div
+      className="panel-state"
+    />
     <h2
       className="panel-title"
     >
@@ -58,7 +61,7 @@ exports[`renders correctly 1`] = `
       <small>
         Last updated: 
         <strong>
-          Mon Jan 01 2018 02:00:00 GMT+0200 (Eastern European Standard Time)
+          -
         </strong>
       </small>
     </p>

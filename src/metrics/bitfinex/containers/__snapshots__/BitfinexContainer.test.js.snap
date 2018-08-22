@@ -1,6 +1,94 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders initial state 1`] = `null`;
+exports[`renders initial state 1`] = `
+<section
+  className="panel"
+>
+  <header
+    className="panel-header"
+  >
+    <div
+      className="panel-state"
+    />
+    <h2
+      className="panel-title"
+    />
+    <h3
+      className="panel-subtitle"
+    >
+      <div
+        className="ticker"
+      >
+        <span
+          className="change-colored-text"
+        >
+          <span
+            className="arrow"
+          />
+        </span>
+        <span>
+           
+        </span>
+        <span
+          className="change-colored-text"
+        >
+          0.00
+           (
+          0.00
+          %)
+        </span>
+      </div>
+    </h3>
+  </header>
+  <main
+    className="panel-main"
+  >
+    <div
+      className="panel-chart"
+    >
+      {
+          "options": {
+              "theme": "light2",
+              "zoomEnabled": true,
+              "axisY": {
+                  "includeZero": false,
+                  "interval": 5,
+                  "prefix": ""
+              },
+              "axisX": {
+                  "interval": 30,
+                  "crosshair": {
+                      "enabled": true
+                  }
+              },
+              "data": [
+                  {
+                      "type": "area",
+                      "lineThickness": 1,
+                      "markerType": "circle",
+                      "xValueFormatString": "HH:mm:ss.ff",
+                      "yValueFormatString": "#,##0.00",
+                      "dataPoints": []
+                  }
+              ]
+          }
+      }
+    </div>
+  </main>
+  <footer
+    className="panel-footer"
+  >
+    <p>
+      <small>
+        Last updated: 
+        <strong>
+          -
+        </strong>
+      </small>
+    </p>
+  </footer>
+</section>
+`;
 
 exports[`renders success state 1`] = `
 <section
@@ -9,6 +97,9 @@ exports[`renders success state 1`] = `
   <header
     className="panel-header"
   >
+    <div
+      className="panel-state"
+    />
     <h2
       className="panel-title"
     />
