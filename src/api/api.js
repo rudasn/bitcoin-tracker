@@ -12,7 +12,13 @@ export default ({ host, }) => {
     version: '0.0.1',
     get(path) {
       return fetch(`${ host }/${ path }`).then(
-        response => response.json()
+        response => {
+          try {
+            return response.json()
+          } catch(e) {
+            return response
+          }
+        }
       ).then(null, error => {
         throw error
       })
