@@ -73,10 +73,15 @@ describe('handles Bitfinex responses', () => {
   it('calculates change between points', () => {
     const bitfinexSecondResponse = {
       mid: '3',
-      ask: '1',
+      ask: '1.5',
       bid: '1.5',
       last_price: '3',
       volume: '30',
+    }
+    const changes = {
+      mid: [ 1.5, 100 ],
+      last_price: [ 1.5, 100 ],
+      volume: [ 15, 100 ],
     }
     const changesState = reducer(newState, {
       type: BITFINEX_RESPONSE,
@@ -90,6 +95,7 @@ describe('handles Bitfinex responses', () => {
         lastChecked: date(),
         lastResponse: date(),
         loading: false,
+        lastChange: changes,
         points: [
           {
             point: bitfinexFirstResponse,
@@ -99,12 +105,7 @@ describe('handles Bitfinex responses', () => {
           {
             point: bitfinexSecondResponse,
             date: date(),
-            changes: {
-              mid: [ 1.5, 100 ],
-              ask: [ -0.5, -33.33333333333333 ],
-              last_price: [ 1.5, 100 ],
-              volume: [ 15, 100 ],
-            }
+            changes,
           },
         ],
         error: null,

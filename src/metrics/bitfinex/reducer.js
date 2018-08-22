@@ -19,6 +19,7 @@ const metrics = [
 
 export const createDefaultState = () => ({
   error: null,
+  lastChange: {},
   lastChecked: null,
   lastResponse: null,
   loading: null,
@@ -98,6 +99,10 @@ export default ({ limit=10 }={}) => (state={}, action) => {
           ...tickerState,
           error: null,
           lastResponse,
+          lastChange: {
+            ...tickerState.lastChange,
+            ...changes,
+          },
           loading: false,
           points,
         }
