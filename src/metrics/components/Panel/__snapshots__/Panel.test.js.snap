@@ -4,7 +4,9 @@ exports[`renders correctly 1`] = `
 <section
   className="panel"
 >
-  <header>
+  <header
+    className="panel-header"
+  >
     <h2
       className="panel-title"
     >
@@ -38,7 +40,9 @@ exports[`renders correctly 1`] = `
       </div>
     </h3>
   </header>
-  <main>
+  <main
+    className="panel-main"
+  >
     <div
       className="panel-chart"
     >
@@ -46,23 +50,18 @@ exports[`renders correctly 1`] = `
           "options": {}
       }
     </div>
-    <div
-      className="panel-recent-changes"
-    >
-      <h4>
-        Most Recent Changes
-      </h4>
-      <table>
-        <thead>
-          <tr />
-        </thead>
-        <tbody />
-      </table>
-    </div>
   </main>
-  <footer>
-    Last updated: 
-    Mon Jan 01 2018 02:00:00 GMT+0200 (Eastern European Standard Time)
+  <footer
+    className="panel-footer"
+  >
+    <p>
+      <small>
+        Last updated: 
+        <strong>
+          Mon Jan 01 2018 02:00:00 GMT+0200 (Eastern European Standard Time)
+        </strong>
+      </small>
+    </p>
   </footer>
 </section>
 `;

@@ -10,23 +10,27 @@ import Ticker from '../Ticker'
 
 const Panel = ({ title, value, change=0, percentage=0, dateUpdated=date(), chartOptions={}, tableOptions={}, }) =>
   <section className="panel">
-    <header>
+    <header className="panel-header">
       <h2 className="panel-title">{ title }</h2>
       <h3 className="panel-subtitle">
         <Ticker change={ change } value={ value } percentage={ percentage } />
       </h3>
     </header>
-    <main>
+    <main className="panel-main">
       <div className="panel-chart">
         <Chart options={ chartOptions } />
       </div>
-      <div className="panel-recent-changes">
-        <h4>Most Recent Changes</h4>
-        <PointsTable rows={ tableOptions.rows } />
-      </div>
+      {
+        tableOptions.rows && tableOptions.rows.length > 1 ?
+          <div className="panel-recent-changes">
+            <h4>Most Recent Changes</h4>
+            <PointsTable rows={ tableOptions.rows } />
+          </div> :
+          null
+      }
     </main>
-    <footer>
-      Last updated: { dateUpdated.toString() }
+    <footer className="panel-footer">
+      <p><small>Last updated: <strong>{ dateUpdated.toString() }</strong></small></p>
     </footer>
   </section>
 
