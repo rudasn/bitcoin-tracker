@@ -1,5 +1,16 @@
+export const formatTableDate = date => date.toISOString().split('T')[1]
+export const formatTableChange = change => change.toFixed(4)
 
-export default ({ ticker, points=[], currency, property }) => ({
+
+/**
+ * Returns ticker configuration options for use in charts or tables.
+ *
+ * @param {object} options
+ * @param {array} options.points Array of points (objects).
+ * @param {string} options.currency The currency we are converting to (eg. $).
+ * @param {string} options.property The property of the points we want to display (eg. last_price).
+ */
+export default ({ points=[], currency, property, tableLimit=15 }) => ({
   chartOptions: {
     theme: 'light2',
     axisY: {
@@ -35,10 +46,10 @@ export default ({ ticker, points=[], currency, property }) => ({
     ].concat(
       points.filter(
         ({ changes }) => !!changes[property]
-      ).slice(-15).reverse().map(
+      ).slice(-tableLimit).reverse().map(
         ({ point, date, changes }) => ([
-          changes[property][1].toFixed(4),
-          date.toISOString().split('T')[1],
+          formatTableChange(changes[property][1]),
+          formatTableDate(date),
           point.last_price,
           point.ask,
           point.bid,
