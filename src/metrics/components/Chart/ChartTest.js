@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import { PureComponent } from 'react'
 
 /**
  * A dummy chart component to be used for unit testing.
