@@ -1,8 +1,6 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
-import date from 'utils/date'
-
 import './panel.css'
 import PointsTable from '../PointsTable'
 import Chart from '../Chart'
