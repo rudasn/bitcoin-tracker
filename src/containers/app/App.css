@@ -56,6 +56,10 @@ small {
   color: var(--color-muted);
 }
 
+.error {
+  color: var(--color-danger);
+}
+
 .app-title {
   font-size: 3rem;
   font-weight: 200;

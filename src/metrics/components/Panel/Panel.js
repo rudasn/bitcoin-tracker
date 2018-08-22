@@ -8,9 +8,18 @@ import PointsTable from '../PointsTable'
 import Chart from '../Chart'
 import Ticker from '../Ticker'
 
-const Panel = ({ title, value, change=0, percentage=0, dateUpdated=date(), chartOptions={}, tableOptions={}, }) =>
+const Panel = ({ title, value, change=0, percentage=0, error, loading, dateUpdated, chartOptions={}, tableOptions={}, }) =>
   <section className="panel">
     <header className="panel-header">
+      <div className="panel-state">
+        {
+          error ?
+            <div className="error">{ error.message ? error.message : 'Unknown Error' }</div> :
+            loading ?
+              'Updating...' :
+              null
+        }
+      </div>
       <h2 className="panel-title">{ title }</h2>
       <h3 className="panel-subtitle">
         <Ticker change={ change } value={ value } percentage={ percentage } />
@@ -30,7 +39,7 @@ const Panel = ({ title, value, change=0, percentage=0, dateUpdated=date(), chart
       }
     </main>
     <footer className="panel-footer">
-      <p><small>Last updated: <strong>{ dateUpdated.toString() }</strong></small></p>
+      <p><small>Last updated: <strong>{ dateUpdated ? dateUpdated.toString() : '-' }</strong></small></p>
     </footer>
   </section>
 
@@ -42,6 +51,8 @@ Panel.propTypes = {
   dateUpdated: propTypes.instanceOf(Date),
   chartOptions: propTypes.object,
   tableOptions: propTypes.object,
+  error: propTypes.object,
+  loading: propTypes.bool,
 }
 
 export default Panel

@@ -20,3 +20,9 @@
 .panel-footer {
   text-align: center;
 }
+.panel-state {
+  color: var(--color-muted);
+  float: right;
+  font-size: 0.85rem;
+  max-width: 30%;
+}

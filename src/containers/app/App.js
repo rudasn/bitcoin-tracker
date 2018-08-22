@@ -17,18 +17,6 @@ class App extends PureComponent {
             ticker="btcgbp"
             title="BTC to GBP (Last Price)"
           />
-          <Bitfinex
-            currency="£"
-            property="bid"
-            ticker="btcgbp"
-            title="BTC to GBP (Bid Price)"
-          />
-          <Bitfinex
-            currency=""
-            property="volume"
-            ticker="btcgbp"
-            title="BTC to GBP (Volume)"
-          />
         </main>
         <footer>
           <div className="app-copyright">
