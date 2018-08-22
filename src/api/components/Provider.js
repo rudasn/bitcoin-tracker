@@ -21,7 +21,7 @@ export class APIProvider extends PureComponent {
 }
 
 APIProvider.propTypes = {
-  Provider: propTypes.func.isRequired,
+  Provider: propTypes.oneOfType([ propTypes.func, propTypes.object ]).isRequired,
   createApi: propTypes.func.isRequired
 }
 

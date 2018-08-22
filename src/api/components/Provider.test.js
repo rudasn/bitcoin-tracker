@@ -6,7 +6,7 @@ import createAPIProvider, { APIProvider } from './Provider'
 
 class Provider extends React.PureComponent {
   render() {
-    return <p>Provider</p>
+    return this.props.children || null
   }
 }
 
@@ -20,7 +20,7 @@ it('renders without crashing', () => {
 })
 
 it('renders correctly', () => {
-  const element = <APIProvider Provider={ Provider } createApi={ createApi } />
+  const element = <APIProvider Provider={ Provider } createApi={ createApi }>Hello World!</APIProvider>
   const tree = renderer.create(element).toJSON()
   expect(tree).toMatchSnapshot()
 })

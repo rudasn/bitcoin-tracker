@@ -7,24 +7,22 @@ import 'whatwg-fetch'
  * @param {string} options.host The API's host URL.
  * @returns {object} An `API` object.
  */
-export default ({ host, }) => {
+export default ({ host='', }={}) => {
   return {
-    version: '0.0.1',
-    get(path) {
-      return fetch(`${ host }/${ path }`).then(
-        response => {
-          try {
-            return response.json()
-          } catch(e) {
-            return response
-          }
+    get(path='') {
+      return fetch(`${ host }${ path }`, {
+        cache: 'no-cache',
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
         }
+      }).then(
+        // Accept JSON and non-JSON responses
+        response => response.json().then(
+          null, _ => response.clone().text()
+        )
       ).then(null, error => {
         throw error
       })
     },
-    post(path, data) {
-      throw new Error(`Not Implemented`)
-    }
   }
 }
