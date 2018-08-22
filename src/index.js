@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import App from './containers/app'
-import config from './config'
-import Provider from './containers/provider'
+import App from 'containers/app'
+import config from 'config'
+import Provider from 'containers/provider'
 
 ReactDOM.render(
   <Provider config={ config }>
