@@ -9,6 +9,7 @@
   --gutter: 3rem;
   --gutter-small: 1.2rem;
   --gutter-minus: -3rem;
+  --color-brand: #fe752f;
 }
 
 body {
@@ -37,13 +38,13 @@ tr:nth-child(even) {
 }
 
 h2 {
-  font-size: 2rem;
-  font-weight: 300;
+  font-size: 2.2rem;
+  font-weight: 500;
 }
 
 h3 {
-  font-size: 1.8rem;
-  font-weight: 600;
+  font-size: 1.9rem;
+  font-weight: 400;
 }
 
 h4 {
@@ -59,5 +60,9 @@ small {
   margin: var(--gutter-small) var(--gutter);
   font-weight: 200;
   font-size: 3rem;
+  text-align: center;
+}
+
+.app-copyright {
   text-align: center;
 }

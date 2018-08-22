@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import date from 'utils/date'
 
 import './App.css'
 import Bitfinex from 'metrics/bitfinex'
@@ -29,7 +30,9 @@ class App extends PureComponent {
           />
         </main>
         <footer>
-          Copyright &copy;
+          <p className="app-copyright">
+            <small>Copyright &copy; { date().getFullYear() } Nicolas Rudas</small>
+          </p>
         </footer>
       </div>
     );
