@@ -7,7 +7,7 @@ import Provider from 'containers/provider'
 
 ReactDOM.render(
   <Provider config={ config }>
-    <App />
+    <App config={ config }/>
   </Provider>,
   document.getElementById('root')
 )

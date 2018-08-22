@@ -6,6 +6,7 @@ import Bitfinex from 'metrics/bitfinex'
 
 class App extends PureComponent {
   render() {
+    const { env: { VERSION, NAME } } = this.props.config
     return (
       <div className="app">
         <h1 className="app-title">Outlyer Bitcoin Tracker</h1>
@@ -30,9 +31,10 @@ class App extends PureComponent {
           />
         </main>
         <footer>
-          <p className="app-copyright">
-            <small>Copyright &copy; { date().getFullYear() } Nicolas Rudas</small>
-          </p>
+          <div className="app-copyright">
+            <p><small>Copyright &copy; { date().getFullYear() } Nicolas Rudas</small></p>
+            <p><small>{ NAME }@{ VERSION }</small></p>
+          </div>
         </footer>
       </div>
     );

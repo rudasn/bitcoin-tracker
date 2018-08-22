@@ -10,12 +10,13 @@ import App from './index'
 it('renders without crashing', () => {
   const config = {
     api: mockApi({}),
+    env: {},
     store: mockStore({ metrics: { bitfinex: {} } })
   }
   const div = document.createElement('div')
   ReactDOM.render(
     <Provider config={ config }>
-      <App />
+      <App config={ config } />
     </Provider>,
     div
   )
