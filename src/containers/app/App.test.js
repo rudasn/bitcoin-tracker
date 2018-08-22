@@ -5,7 +5,7 @@ import renderer from 'react-test-renderer'
 import Provider from 'containers/provider'
 import { mockStore, mockApi } from 'testUtils'
 
-import App from './App'
+import App from './index'
 
 it('renders without crashing', () => {
   const config = {

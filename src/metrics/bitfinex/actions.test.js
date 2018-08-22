@@ -1,12 +1,6 @@
-import * as actions from './actions'
-import configureMockStore from 'redux-mock-store'
-import thunk from 'redux-thunk'
+import { mockStore, mockApi } from 'testUtils'
 
-const middlewares = [thunk]
-const mockStore = configureMockStore(middlewares)
-const mockApi = (response, error) => ({
-  get: () => (error ? Promise.reject(error) : Promise.resolve(response)),
-})
+import * as actions from './actions'
 
 it('should create an action to fetch a ticker', () => {
   const payload = {
