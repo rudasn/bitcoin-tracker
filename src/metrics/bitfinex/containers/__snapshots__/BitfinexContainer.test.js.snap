@@ -6,7 +6,9 @@ exports[`renders success state 1`] = `
 <section
   className="panel"
 >
-  <header>
+  <header
+    className="panel-header"
+  >
     <h2
       className="panel-title"
     />
@@ -24,7 +26,7 @@ exports[`renders success state 1`] = `
           />
         </span>
         <span>
-          1234.456
+          GBP1234.456
            
         </span>
         <span
@@ -38,30 +40,40 @@ exports[`renders success state 1`] = `
       </div>
     </h3>
   </header>
-  <main>
+  <main
+    className="panel-main"
+  >
     <div
       className="panel-chart"
     >
       {
           "options": {
               "theme": "light2",
+              "zoomEnabled": true,
               "axisY": {
                   "includeZero": false,
                   "interval": 5,
                   "prefix": "GBP"
               },
               "axisX": {
-                  "interval": 30
+                  "interval": 30,
+                  "crosshair": {
+                      "enabled": true
+                  }
               },
               "data": [
                   {
-                      "type": "line",
+                      "type": "area",
+                      "lineThickness": 1,
+                      "markerType": "circle",
                       "xValueFormatString": "HH:mm:ss.ff",
                       "yValueFormatString": "GBP#,##0.00",
                       "dataPoints": [
                           {
                               "x": "2018-01-01T00:00:00.000Z",
-                              "y": 1234.456
+                              "y": 1234.456,
+                              "indexLabelBackgroundColor": "white",
+                              "indexLabelFontColor": "red"
                           }
                       ]
                   }
@@ -69,42 +81,18 @@ exports[`renders success state 1`] = `
           }
       }
     </div>
-    <div
-      className="panel-recent-changes"
-    >
-      <h4>
-        Most Recent Changes
-      </h4>
-      <table>
-        <thead>
-          <tr>
-            <th>
-              Change (%)
-            </th>
-            <th>
-              Date
-            </th>
-            <th>
-              Price (GBP)
-            </th>
-            <th>
-              Ask (GBP)
-            </th>
-            <th>
-              Bid (GBP)
-            </th>
-            <th>
-              Volume
-            </th>
-          </tr>
-        </thead>
-        <tbody />
-      </table>
-    </div>
   </main>
-  <footer>
-    Last updated: 
-    Mon Jan 01 2018 02:00:00 GMT+0200 (Eastern European Standard Time)
+  <footer
+    className="panel-footer"
+  >
+    <p>
+      <small>
+        Last updated: 
+        <strong>
+          Mon Jan 01 2018 02:00:00 GMT+0200 (Eastern European Standard Time)
+        </strong>
+      </small>
+    </p>
   </footer>
 </section>
 `;

@@ -48,14 +48,14 @@ export class BitfinexContainer extends PureComponent {
     dispatch(actions.fetchBitfinex({ ticker, api, }))
   }
   render() {
-    const { title, points, property, ticker } = this.props
+    const { title, points, property, currency } = this.props
     const { chartOptions, tableOptions } = getTickerOptions(this.props) // todo: memo
     const last = points[ points.length - 1 ]
 
     // todo handle initial, loading, error, and success states
     if (!last) { return null }
 
-    const value = last.point[property]
+    const value = `${ currency }${ last.point[property] }`
     const changes = last.changes && last.changes[property]
     const [ change, percentage ] = changes || [ 0, 0 ]
 
@@ -94,6 +94,7 @@ BitfinexContainer.propTypes = {
 BitfinexContainer.defaultProps = {
   points: [],
   updateEvery: 6000,
+  currency: '',
 }
 
 const mapStateToProps = (state, props) => {

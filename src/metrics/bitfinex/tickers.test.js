@@ -23,7 +23,13 @@ it('should return chart points', () => {
   const { dataPoints, yValueFormatString } = options.chartOptions.data[0]
 
   expect(dataPoints).toEqual([
-    { x: mockDate(), y: 1234.567 },
+    {
+      indexLabel: undefined,
+      indexLabelBackgroundColor: "white",
+      indexLabelFontColor: "red",
+      x: mockDate(),
+      y: 1234.567,
+    },
   ])
 })
 

@@ -1,4 +1,4 @@
-export const formatTableDate = date => date.toISOString().split('T')[1]
+export const formatTableDate = date => date.toISOString().split('T')[1].slice(0, -1)
 export const formatTableChange = change => change.toFixed(4)
 
 
@@ -13,22 +13,38 @@ export const formatTableChange = change => change.toFixed(4)
 export default ({ points=[], currency, property, tableLimit=15 }) => ({
   chartOptions: {
     theme: 'light2',
+    zoomEnabled: true,
     axisY: {
       includeZero: false,
-      interval: 5,
+      interval: 5, // todo: change inteval according to points' min max difference.
       prefix: currency,
     },
     axisX: {
       interval: 30,
+      crosshair: {
+        enabled: true,
+      }
     },
     data: [{
-      type: "line",
+      type: "area",
+      lineThickness: 1,
+      markerType: points.length > 1 ? 'none' : 'circle',
       xValueFormatString: 'HH:mm:ss.ff',
       yValueFormatString: `${ currency }#,##0.00`,
       dataPoints: points.map(
-        ({ point, date }) => ({
+        ({ point, date, changes={} }) => ({
           x: new Date(date),
-          y: parseFloat(point[property]),
+          y: point.hasOwnProperty(property) ?
+            parseFloat(point[property]) :
+            0,
+          indexLabel: changes.hasOwnProperty(property) ?
+            `${ formatTableChange(changes[property][1]) }%` :
+            undefined,
+          indexLabelBackgroundColor: 'white',
+          indexLabelFontColor: (
+            changes.hasOwnProperty(property) &&
+            changes[property][1] > 0
+          ) ? 'green' : 'red'
         })
       )
     }],
