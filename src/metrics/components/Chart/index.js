@@ -1,3 +1,6 @@
-import Chart from './Chart'
+import env from 'config/env'
 
-export default Chart
+import Chart from './Chart'
+import ChartTest from './ChartTest'
+
+export default (env.NODE_ENV === 'test') ? ChartTest : Chart
