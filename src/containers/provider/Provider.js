@@ -1,6 +1,7 @@
 import React from 'react'
-
+import propTypes from 'prop-types'
 import { Provider as ReduxProvider } from 'react-redux'
+
 import { APIProvider } from 'api'
 
 /**
@@ -9,7 +10,7 @@ import { APIProvider } from 'api'
  * into a single provider component.
  * Useful for unit testing.
  */
-export default ({ children, config, }) =>
+const Provider = ({ children, config, }) =>
   <APIProvider { ...config.api  }>
     <ReduxProvider store={ config.store }>
       {
@@ -17,3 +18,12 @@ export default ({ children, config, }) =>
       }
     </ReduxProvider>
   </APIProvider>
+
+Provider.propTypes = {
+  config: propTypes.shape({
+    api: propTypes.object.isRequired,
+    store: propTypes.object.isRequired,
+  }).isRequired,
+}
+
+export default Provider
