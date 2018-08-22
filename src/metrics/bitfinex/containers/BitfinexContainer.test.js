@@ -1,25 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import renderer from 'react-test-renderer'
-import configureMockStore from 'redux-mock-store'
-import thunk from 'redux-thunk'
 
-import date from 'utils/date'
+import { mockStore, mockApi, mockDate } from 'testUtils'
+
 import { BitfinexContainer } from './BitfinexContainer'
-
-const middlewares = [thunk]
-const mockStore = configureMockStore(middlewares)
-const mockApi = (response, error) => {
-  const id = Date.now()
-  const _mockApiGet = jest.fn()
-  return {
-    _mockApiGet,
-    get: () => {
-      _mockApiGet(error ? error : response)
-      return error ? Promise.reject(error) : Promise.resolve(response)
-    },
-  }
-}
 
 it('renders without crashing', () => {
   const api = mockApi({})
@@ -63,7 +48,7 @@ it('renders success state', () => {
       api={ api }
       dispatch={ store.dispatch }
       points={[
-        { point: { last_price: "1234.456" }, date: date() },
+        { point: { last_price: "1234.456" }, date: mockDate() },
       ]}
     />
   )
@@ -82,7 +67,7 @@ describe('refreshes after a certain amount of time', () => {
       api={ api }
       dispatch={ store.dispatch }
       points={[
-        { point: { last_price: "1234.456" }, date: date() },
+        { point: { last_price: "1234.456" }, date: mockDate() },
       ]}
       updateEvery={ 1 }
     />
