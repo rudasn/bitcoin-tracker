@@ -5,8 +5,9 @@
   --color-dark: #000;
   --color-muted: #888;
   --color-light: #cecece;
-  --width-max: 880px;
+  --width-max: 960px;
   --gutter: 3rem;
+  --gutter-small: 1.2rem;
   --gutter-minus: -3rem;
 }
 
@@ -48,4 +49,15 @@ h3 {
 h4 {
   font-size: 1.55rem;
   font-weight: 300;
+}
+
+small {
+  color: var(--color-muted);
+}
+
+.app-title {
+  margin: var(--gutter-small) var(--gutter);
+  font-weight: 200;
+  font-size: 3rem;
+  text-align: center;
 }
