@@ -4,6 +4,15 @@
   "private": true,
   "description": "Outlyer frontend recruitment test",
   "author": "rudasn@gmail.com",
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!node_modules/",
+      "!src/index.js",
+      "!src/metrics/components/Chart/Chart.js",
+      "!src/libs/**"
+    ]
+  },
   "dependencies": {
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
