@@ -40,7 +40,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build:production": "yarn test:coverage && react-scripts build",
-    "build:ghpages": "yarn test:coverage && REACT_APP_API_HOST='https://cors-anywhere.herokuapp.com' PUBLIC_URL='https://rudasn.github.io/outlyer-front-end-test' react-scripts build",
+    "build:ghpages": "yarn test:coverage && REACT_APP_API_HOST='https://cors-anywhere.herokuapp.com' PUBLIC_URL='https://rudasn.github.io/bitcoin-tracker' react-scripts build",
     "publish:ghpages": "gh-pages -d build",
     "deploy:ghpages": "yarn build:ghpages && yarn publish:ghpages",
     "test": "react-scripts test --env=jsdom",
