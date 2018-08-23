@@ -24,9 +24,6 @@ it('should return chart points', () => {
 
   expect(dataPoints).toEqual([
     {
-      indexLabel: undefined,
-      indexLabelBackgroundColor: "white",
-      indexLabelFontColor: "red",
       x: mockDate(),
       y: 1234.567,
     },

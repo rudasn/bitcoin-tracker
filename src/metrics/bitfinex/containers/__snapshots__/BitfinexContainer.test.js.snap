@@ -162,9 +162,7 @@ exports[`renders success state 1`] = `
                       "dataPoints": [
                           {
                               "x": "2018-01-01T00:00:00.000Z",
-                              "y": 1234.456,
-                              "indexLabelBackgroundColor": "white",
-                              "indexLabelFontColor": "red"
+                              "y": 1234.456
                           }
                       ]
                   }
