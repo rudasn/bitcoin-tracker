@@ -1,6 +1,6 @@
 .arrow {
-  width: 30px;
-  height: 30px;
+  width: 1.2rem;
+  height: 1.2rem;
   margin: 0 0.5rem;
   display: inline-block;
   border-bottom: 5px solid var(--color-muted);
@@ -8,15 +8,15 @@
 .arrow-down {
   width: 0;
   height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-top: 26px solid var(--color-danger);
+  border-left: 1.2rem solid transparent;
+  border-right: 1.2rem solid transparent;
+  border-top: 1.2rem solid var(--color-danger);
   border-bottom: none;
 }
 .arrow-up {
   width: 0;
   height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 26px solid var(--color-success);
+  border-left: 1.2rem solid transparent;
+  border-right: 1.2rem solid transparent;
+  border-bottom: 1.2rem solid var(--color-success);
 }

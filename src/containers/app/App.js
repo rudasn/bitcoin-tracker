@@ -15,7 +15,7 @@ class App extends PureComponent {
             currency="£"
             property="last_price"
             ticker="btcgbp"
-            title="BTC to GBP (Last Price)"
+            title="BTC to GBP (Price)"
           />
           <Bitfinex
             currency="£"
