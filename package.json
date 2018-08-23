@@ -1,8 +1,7 @@
 {
-  "name": "frontend-test",
+  "name": "bitcoin-tracker",
   "version": "0.1.0",
   "private": true,
-  "description": "Outlyer frontend recruitment test",
   "author": "rudasn@gmail.com",
   "jest": {
     "collectCoverageFrom": [
