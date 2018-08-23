@@ -1,4 +1,4 @@
-# Outlyer frontend recruitment test
+# Bitcoing Tracker
 
 ![Test Coverage](./coverage.svg)
 
