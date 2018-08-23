@@ -30,6 +30,7 @@
     "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {
+    "gh-pages": "^1.2.0",
     "jest-coverage-badges": "^1.0.0",
     "jest-fetch-mock": "^1.6.5",
     "react-scripts": "1.1.4",
@@ -39,7 +40,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:production": "yarn test:coverage && react-scripts build ",
+    "build:production": "yarn test:coverage && react-scripts build",
+    "build:ghpages": "yarn test:coverage && REACT_APP_API_HOST='https://cors-anywhere.herokuapp.com' PUBLIC_URL='https://rudasn.github.io/outlyer-front-end-test' react-scripts build",
+    "publish:ghpages": "gh-pages -d build",
+    "deploy:ghpages": "yarn build:ghpages && yarn publish:ghpages",
     "test": "react-scripts test --env=jsdom",
     "test:coverage": "yarn test --coverage && jest-coverage-badges && yarn test:coverage:update",
     "test:coverage:update": "cp ./coverage/badge-functions.svg ./coverage.svg",
