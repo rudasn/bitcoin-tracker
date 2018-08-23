@@ -36,15 +36,7 @@ export default ({ points=[], currency, property, tableLimit=15 }) => ({
           x: new Date(date),
           y: point.hasOwnProperty(property) ?
             parseFloat(point[property]) :
-            0,
-          indexLabel: changes.hasOwnProperty(property) ?
-            `${ formatTableChange(changes[property][1]) }%` :
-            undefined,
-          indexLabelBackgroundColor: 'white',
-          indexLabelFontColor: (
-            changes.hasOwnProperty(property) &&
-            changes[property][1] > 0
-          ) ? 'green' : 'red'
+            0
         })
       )
     }],
