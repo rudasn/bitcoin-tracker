@@ -1,5 +1,12 @@
 import 'whatwg-fetch'
 
+const cleanPath = (host, path) =>
+  host.charAt(host.length - 1) !== '/' &&
+  path.charAt(0) !== '/' ?
+    (host + '/' + path) :
+    host + path
+
+
 /**
  * Creates an object to interact with the api.
  *
@@ -10,7 +17,7 @@ import 'whatwg-fetch'
 export default ({ host='', }={}) => {
   return {
     get(path='') {
-      return fetch(`${ host }${ path }`, {
+      return fetch(cleanPath(host, path), {
         cache: 'no-cache',
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
