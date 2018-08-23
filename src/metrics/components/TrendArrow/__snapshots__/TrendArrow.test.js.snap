@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders negative correctly 1`] = `
+<span
+  className="arrow arrow-down"
+/>
+`;
+
+exports[`renders no change correctly 1`] = `
+<span
+  className="arrow"
+/>
+`;
+
+exports[`renders positive correctly 1`] = `
+<span
+  className="arrow arrow-up"
+/>
+`;

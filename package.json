@@ -1,16 +1,51 @@
 {
-  "name": "frontend-test",
-  "version": "0.1.0",
+  "name": "bitcoin-tracker",
+  "version": "1.0.2",
   "private": true,
+  "author": "rudasn@gmail.com",
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!node_modules/",
+      "!src/index.js",
+      "!src/metrics/components/Chart/Chart.js",
+      "!src/libs/**"
+    ],
+    "coverageReporters": [
+      "json-summary",
+      "text",
+      "lcov"
+    ]
+  },
   "dependencies": {
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4"
+    "prop-types": "^15.6.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "recompact": "^3.3.0",
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "whatwg-fetch": "^2.0.4"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.2.0",
+    "jest-coverage-badges": "^1.0.0",
+    "jest-fetch-mock": "^1.6.5",
+    "react-scripts": "1.1.4",
+    "react-test-renderer": "^16.4.2",
+    "redux-mock-store": "^1.5.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:production": "yarn test:coverage && react-scripts build",
+    "build:ghpages": "yarn test:coverage && REACT_APP_API_HOST='https://cors-anywhere.herokuapp.com' PUBLIC_URL='https://rudasn.github.io/bitcoin-tracker' react-scripts build",
+    "publish:ghpages": "gh-pages -d build",
+    "deploy:ghpages": "yarn build:ghpages && yarn publish:ghpages",
     "test": "react-scripts test --env=jsdom",
+    "test:coverage": "yarn test --coverage && jest-coverage-badges && yarn test:coverage:update",
+    "test:coverage:update": "cp ./coverage/badge-functions.svg ./coverage.svg",
     "eject": "react-scripts eject"
   }
 }

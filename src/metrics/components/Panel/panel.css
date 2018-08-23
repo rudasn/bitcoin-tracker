@@ -1,0 +1,32 @@
+.panel {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: 10px solid var(--color-brand);
+  box-sizing: border-box;
+  margin: var(--gutter) auto var(--gutter);
+  max-width: 100%;
+  padding: var(--gutter);
+  width: var(--width-max);
+}
+.panel-main > section {
+  max-width: 100%;
+  overflow: auto;
+}
+.panel-title {
+  margin: 0;
+}
+.panel-subtitle {
+  margin: 0;
+}
+.panel-chart {
+  margin: var(--gutter) 0;
+}
+.panel-footer {
+  text-align: center;
+}
+.panel-state {
+  color: var(--color-muted);
+  float: right;
+  font-size: 0.85rem;
+  max-width: 30%;
+}

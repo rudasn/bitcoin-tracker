@@ -1,8 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import App from 'containers/app'
+import config from 'config'
+import Provider from 'containers/provider'
+
+ReactDOM.render(
+  <Provider config={ config }>
+    <App config={ config }/>
+  </Provider>,
+  document.getElementById('root')
+)

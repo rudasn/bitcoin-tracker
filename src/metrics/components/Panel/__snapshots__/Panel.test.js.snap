@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  className="panel"
+>
+  <header
+    className="panel-header"
+  >
+    <div
+      className="panel-state"
+    />
+    <h2
+      className="panel-title"
+    >
+      This is a panel
+    </h2>
+    <h3
+      className="panel-subtitle"
+    >
+      <div
+        className="ticker"
+      >
+        <span
+          className="change-colored-text-up"
+        >
+          <span
+            className="arrow arrow-up"
+          />
+        </span>
+        <span>
+          1047
+           
+        </span>
+        <span
+          className="change-colored-text-up"
+        >
+          1.05
+           (
+          0.04
+          %)
+        </span>
+      </div>
+    </h3>
+  </header>
+  <main
+    className="panel-main"
+  >
+    <section
+      className="panel-chart"
+    >
+      {
+          "options": {}
+      }
+    </section>
+  </main>
+  <footer
+    className="panel-footer"
+  >
+    <p>
+      <small>
+        Last updated: 
+        <strong>
+          -
+        </strong>
+      </small>
+    </p>
+  </footer>
+</section>
+`;
