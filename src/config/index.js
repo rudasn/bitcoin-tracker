@@ -12,4 +12,6 @@ const config = {
   store,
 }
 
+console.log(`Loaded Config:\n${ JSON.stringify(config, true, 4) }`)
+
 export default config

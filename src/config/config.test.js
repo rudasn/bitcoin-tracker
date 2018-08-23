@@ -8,6 +8,9 @@ it('should provide required config options', () => {
   // env
   expect(config.env).toBeDefined()
   expect(config.env.NODE_ENV).toBe('test')
+  expect(config.env.VERSION).toBeDefined()
+  expect(config.env.NAME).toBeDefined()
+  expect(config.env.PUBLIC_URL).toBeDefined()
 
   // store
   expect(config.store).toBeDefined()
