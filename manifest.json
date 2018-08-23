@@ -1,0 +1,14 @@
+{
+  "name": "Bitcoin Tracker",
+  "short_name": "BTC Tracker",
+  "display": "standalone",
+  "start_url": ".",
+  "background_color": "#000",
+  "theme_color": "#fe752f",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64"
+    }
+  ]
+}
