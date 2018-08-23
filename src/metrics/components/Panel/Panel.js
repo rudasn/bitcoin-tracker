@@ -6,13 +6,24 @@ import PointsTable from '../PointsTable'
 import Chart from '../Chart'
 import Ticker from '../Ticker'
 
+export const formatErrorMessage = error => {
+  if (typeof error === 'string') {
+    return error
+  } else if (typeof error.message === 'string') {
+    return error.message
+  } else if (typeof error.name === 'string') {
+    return error.name
+  }
+  return 'Unknown Error'
+}
+
 const Panel = ({ title, value, change=0, percentage=0, error, loading, dateUpdated, chartOptions={}, tableOptions={}, }) =>
   <section className="panel">
     <header className="panel-header">
       <div className="panel-state">
         {
           error ?
-            <div className="error">{ error.message ? error.message : 'Unknown Error' }</div> :
+            <div className="error">{ formatErrorMessage(error) }</div> :
             loading ?
               'Updating...' :
               null
@@ -42,15 +53,15 @@ const Panel = ({ title, value, change=0, percentage=0, error, loading, dateUpdat
   </section>
 
 Panel.propTypes = {
-  title: propTypes.string,
-  value: propTypes.node,
   change: propTypes.number,
-  percentage: propTypes.number,
-  dateUpdated: propTypes.instanceOf(Date),
   chartOptions: propTypes.object,
-  tableOptions: propTypes.object,
+  dateUpdated: propTypes.instanceOf(Date),
   error: propTypes.object,
   loading: propTypes.bool,
+  percentage: propTypes.number,
+  tableOptions: propTypes.object,
+  title: propTypes.string,
+  value: propTypes.node,
 }
 
 export default Panel
