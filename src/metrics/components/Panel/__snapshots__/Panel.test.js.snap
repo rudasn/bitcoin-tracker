@@ -46,13 +46,13 @@ exports[`renders correctly 1`] = `
   <main
     className="panel-main"
   >
-    <div
+    <section
       className="panel-chart"
     >
       {
           "options": {}
       }
-    </div>
+    </section>
   </main>
   <footer
     className="panel-footer"

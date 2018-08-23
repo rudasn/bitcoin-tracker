@@ -11,12 +11,21 @@
   --gutter-minus: -3rem;
   --color-brand: #fe752f;
 }
+html {
+  font-size: 12px;
+}
+@media (min-width: 600px) {
+  html {
+    font-size: 17px;
+  }
+}
 
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   color: #222;
+  font-size: 1rem;
   background-color: #eee;
 }
 
@@ -60,9 +69,15 @@ small {
   color: var(--color-danger);
 }
 
+.app {
+  padding: var(--gutter-small);
+  box-sizing: border-box;
+  width: 100%;
+}
+
 .app-title {
   font-size: 3rem;
-  font-weight: 200;
+  font-weight: 100;
   margin: var(--gutter-small) var(--gutter);
   text-align: center;
 }

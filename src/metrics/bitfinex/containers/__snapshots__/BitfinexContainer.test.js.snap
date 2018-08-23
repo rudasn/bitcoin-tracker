@@ -43,7 +43,7 @@ exports[`renders initial state 1`] = `
   <main
     className="panel-main"
   >
-    <div
+    <section
       className="panel-chart"
     >
       {
@@ -73,7 +73,7 @@ exports[`renders initial state 1`] = `
               ]
           }
       }
-    </div>
+    </section>
   </main>
   <footer
     className="panel-footer"
@@ -134,7 +134,7 @@ exports[`renders success state 1`] = `
   <main
     className="panel-main"
   >
-    <div
+    <section
       className="panel-chart"
     >
       {
@@ -169,7 +169,7 @@ exports[`renders success state 1`] = `
               ]
           }
       }
-    </div>
+    </section>
   </main>
   <footer
     className="panel-footer"

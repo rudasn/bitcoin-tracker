@@ -35,15 +35,15 @@ const Panel = ({ title, value, change=0, percentage=0, error, loading, dateUpdat
       </h3>
     </header>
     <main className="panel-main">
-      <div className="panel-chart">
+      <section className="panel-chart">
         <Chart options={ chartOptions } />
-      </div>
+      </section>
       {
         tableOptions.rows && tableOptions.rows.length > 1 ?
-          <div className="panel-recent-changes">
+          <section className="panel-recent-changes">
             <h4>Most Recent Changes</h4>
             <PointsTable rows={ tableOptions.rows } />
-          </div> :
+          </section> :
           null
       }
     </main>
